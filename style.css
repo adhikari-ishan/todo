@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+:root{
+    /* colors */
+    --bg-color: rgb(31, 29, 29);
+    --primary-text-color: rgb(237, 223, 223);
+    --btn-color: rgb(230, 26, 26);
+
+    /* padding */
+    --nav-padding: 15px 30px;
+    --section-padding: 15px 30px;
+    --padding-small: 5px;
+    --padding-medium: 10px;
+    --padding-large: 15px;
+    --padding-xl: 20px;
+
+    /* border-radius */
+    --border-radius-sm: 5px;
+    --border-radius-m: 10px;
+    --border-radius-l: 15px;
+    --border-radius-xl: 20px;
+    
+}
+
+main{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+body{
+    background-color: var(--bg-color);
+    color: var(--primary-text-color);
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 10%;
+    width: 100%;
+    padding: var(--nav-padding);
+}
+
+nav button{
+    background-color: var(--bg-color);
+    color: var(--primary-text-color);
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: var(--padding-medium) var(--padding-medium);
+    border-radius: var(--border-radius-m);
+}
+
+section{
+    padding: var(--section-padding);
+    display: flex;
+    justify-content: space-between;
+    background-color: aqua;
+    flex-grow: 1;
+    gap: var(--padding-xl);
+   
+}
+
+section .task-column{
+    background-color: red;
+    flex-grow: 1;
+
+
+    
+}
