@@ -11,10 +11,13 @@ html, body{
 }
 
 :root{
+
     /* colors */
-    --bg-color: rgb(31, 29, 29);
+    --background-color: black;
+    --bg-color: rgb(44, 40, 40);
     --primary-text-color: rgb(237, 223, 223);
-    --btn-color: rgb(230, 26, 26);
+    --task-color: rgb(92, 79, 79);
+    --delete-color: red;
 
     /* padding */
     --nav-padding: 15px 30px;
@@ -39,7 +42,7 @@ main{
 }
 
 body{
-    background-color: var(--bg-color);
+    background-color: var(--background-color);
     color: var(--primary-text-color);
 }
 
@@ -66,16 +69,45 @@ section{
     padding: var(--section-padding);
     display: flex;
     justify-content: space-between;
-    background-color: aqua;
+    /* background-color: var(--bg-color); */
     flex-grow: 1;
     gap: var(--padding-xl);
    
 }
 
 section .task-column{
-    background-color: red;
+    background-color: var(--bg-color);
     flex-grow: 1;
+    padding: var(--padding-medium) var(--padding-medium);
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-xl);
+}
 
-
+section .task-column .heading{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     
 }
+
+section .task-column .task{
+    background-color: var(--task-color);
+    padding: var(--padding-medium);
+    border-radius: var(--border-radius-m);
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-small);
+    
+}
+
+section .task-column .task button{
+    align-self: flex-end;
+    padding: var(--padding-small);
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    background-color: var(--delete-color);
+    color: var(--primary-text-color);
+}
+
