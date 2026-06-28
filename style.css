@@ -99,7 +99,14 @@ section .task-column .task{
     display: flex;
     flex-direction: column;
     gap: var(--padding-small);
+    cursor: grab;
     
+    
+}
+
+section .task-column .hover-over{
+    border: 2px dashed var(--primary-text-color);
+    scale: 1.05;
 }
 
 section .task-column .task button{
