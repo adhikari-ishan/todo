@@ -18,6 +18,7 @@ html, body{
     --primary-text-color: rgb(237, 223, 223);
     --task-color: rgb(92, 79, 79);
     --delete-color: red;
+    --add-color: green;
 
     /* padding */
     --nav-padding: 15px 30px;
@@ -56,7 +57,7 @@ nav{
 }
 
 nav button{
-    background-color: var(--bg-color);
+    background-color: var(--add-color);
     color: var(--primary-text-color);
     border: none;
     cursor: pointer;
@@ -69,7 +70,6 @@ section{
     padding: var(--section-padding);
     display: flex;
     justify-content: space-between;
-    /* background-color: var(--bg-color); */
     flex-grow: 1;
     gap: var(--padding-xl);
    
@@ -82,6 +82,13 @@ section .task-column{
     display: flex;
     flex-direction: column;
     gap: var(--padding-xl);
+    border-radius: var(--padding-medium);
+    transition: all 0.7s cubic-bezier(0.19,1,0.22,1);
+}
+
+section .task-column.hover-over{
+    border: 2px dashed var(--primary-text-color);
+    scale: 1.05;
 }
 
 section .task-column .heading{
@@ -104,11 +111,6 @@ section .task-column .task{
     
 }
 
-section .task-column .hover-over{
-    border: 2px dashed var(--primary-text-color);
-    scale: 1.05;
-}
-
 section .task-column .task button{
     align-self: flex-end;
     padding: var(--padding-small);
@@ -116,5 +118,46 @@ section .task-column .task button{
     cursor: pointer;
     background-color: var(--delete-color);
     color: var(--primary-text-color);
+    border: none;
+    outline: none;
 }
 
+.addtask{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+}
+
+.addtask .center{
+    background-color: var(--background-color);
+    padding: var(--padding-small);
+    border-radius: var(--border-radius-sm);
+    display: flex;
+    z-index: 10;
+    flex-direction: column;
+    gap: var(--padding-medium);
+}
+
+.addtask .center input, .addtask .center textarea{
+    background-color: var(--task-color);
+    border: none;
+    outline: none;
+    color: var(--primary-text-color);
+    padding: var(--padding-small);
+    border-radius: var(--border-radius-sm);
+}
+
+.addtask .center button{
+    background-color: var(--add-color);
+    color: var(--primary-text-color);
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: var(--padding-small);
+    border-radius: var(--border-radius-sm);
+}
