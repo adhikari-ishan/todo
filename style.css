@@ -122,9 +122,9 @@ section .task-column .task button{
     outline: none;
 }
 
-.addtask{
+.modal{
     position: fixed;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     height: 100vh;
@@ -133,7 +133,19 @@ section .task-column .task button{
     left: 0;
 }
 
-.addtask .center{
+.modal.active{
+    display: flex;
+}
+
+.modal .bg{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(43, 42, 42, 0.717);
+    backdrop-filter: blur(5px);
+}
+
+.modal .center{
     background-color: var(--background-color);
     padding: var(--padding-small);
     border-radius: var(--border-radius-sm);
@@ -143,7 +155,7 @@ section .task-column .task button{
     gap: var(--padding-medium);
 }
 
-.addtask .center input, .addtask .center textarea{
+.modal .center input, .modal .center textarea, .modal .center select{
     background-color: var(--task-color);
     border: none;
     outline: none;
@@ -152,7 +164,7 @@ section .task-column .task button{
     border-radius: var(--border-radius-sm);
 }
 
-.addtask .center button{
+.modal .center button{
     background-color: var(--add-color);
     color: var(--primary-text-color);
     border: none;
