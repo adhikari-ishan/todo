@@ -54,6 +54,8 @@ nav{
     height: 10%;
     width: 100%;
     padding: var(--nav-padding);
+    position: sticky;
+    top: 0;
 }
 
 nav button{
